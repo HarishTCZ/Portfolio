@@ -1,0 +1,358 @@
+body{
+    background-color: rgb(5, 12, 15);
+    overflow: none;
+}
+body::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+.antonio-light {
+    font-family: "Antonio", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+.oswald-extralight {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+div{
+    color: rgb(236, 230, 213);
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    color: rgb(236, 230, 213);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    height: 9vh;
+    padding: 15px 30px;
+    position: relative; /* Add relative positioning for the navbar */
+}
+
+.nav-link {
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Keep the text color the same */
+    position: relative; /* Positioning context for the pseudo-element */
+    transition: opacity 0.3s ease; /* Transition for opacity change */
+}
+
+/* Underline effect with gradient */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Start from the center */
+    bottom: -5px; /* Adjust as necessary for spacing */
+    width: 0;
+    height: 2px; /* Height of the underline */
+    background: linear-gradient(90deg, #ff4500, #ff6347, #ff7f50); /* Fire colors gradient */
+    transition: width 0.3s ease, left 0.3s ease; /* Transition for width and position */
+    border-radius: 2px; /* Optional: add slight rounding to the underline */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand to full width on hover */
+    left: 0; /* Move to the left */
+}
+
+/* Fade out effect for other navbar items */
+.nav-link {
+    transition: opacity 0.3s ease; /* Add transition for opacity */
+}
+
+.nav-link:hover {
+    opacity: 1; /* Keep the hovered link fully visible */
+}
+
+/* Use sibling selectors to fade out other links when hovering */
+.nav-link:hover {
+    opacity: 1; /* Keep the hovered link fully visible */
+}
+
+.nav-link:not(:hover) {
+    opacity: 0.2; /* Fade out other links */
+}
+
+/* Ensure the hovered link remains visible */
+.navbar:hover .nav-link:hover {
+    opacity: 1; /* Ensure the hovered link remains fully visible */
+}
+
+.navbar:hover .nav-link:not(:hover) {
+    opacity: 0.2; /* Fade out other links */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+.hero-title-screen{ /* total of sup,name and the info*/
+    color : rgb(236, 230, 213);
+    height: 100%;
+    display : flex;
+    flex-direction : column;
+    justify-content : space-evenly;
+    line-height : 20px;
+    padding: 40px 40px 40px 40px;  
+}
+.main-card{ /* sup and name*/
+    align-items: center;
+    display: flex;
+    height: 58vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+.below{
+    display: flex;
+    justify-content: right;
+    margin-top: 7vh;
+}
+.project-box {
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.project-box.fade-out {
+    opacity: 0.3; /* Fade out effect */
+}
+
+
+
+
+/* Container for the main card */
+.main-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sliding in the 'SUP PEOPLE IT'S' text */
+.sup {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slide-up 1.5s ease-out forwards;
+    animation-delay: 0.2s; /* First to appear */
+}
+
+/* Sliding in the 'HARISH RAGAVENDRA' text */
+.name {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slide-up 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Appear after .sup */
+}
+
+/* Sliding in the intro text */
+.main-intro {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slide-up 1.5s ease-out forwards;
+    animation-delay: 1.8s; /* Appear after .name */
+}
+
+/* Keyframes for sliding up */
+@keyframes slide-up {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+.sup{
+    font-size: 1.314rem;
+    font-family: "Antonio", sans-serif;
+    font-weight: 900;
+    letter-spacing: 10px;
+    line-height: 100%;
+    margin-top: 30px;
+}
+.name{
+    font-size: 9vw;
+    font-family: "Antonio", sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+    letter-spacing: -5px;
+    line-height: 100%;
+    margin-top: 10px;
+}
+.main-intro{ /* intro info paragraph shit*/
+    font-family: "Oswald", sans-serif;
+    width: 400px;
+    /* word-spacing: 3px; */
+    display: inline-block;
+    margin: 0px;
+    line-height: 25px;
+}
+
+
+
+
+
+.projects{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.project-box{
+    display: flex;
+    border: 1px solid;
+    width: 75vh;
+    height: 90vh;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.project-title{
+    font-family: "Antonio", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 6.993rem;
+    letter-spacing: -8px;
+    margin: 0px 0px 0px 0px;
+    line-height: 97%;
+}
+.project-info{
+    line-height: 30px;
+    margin-top: 30px;
+}
+.upper-project-box{
+    height: 50vh;
+}
+.paragraph{
+    line-height: 30px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60vh;
+}
+.text1 {
+    padding-left: 10vh;
+    padding-right: 10vh;
+    font-size: 18px;
+    opacity: .45;
+    word-spacing: 4px;
+    line-height: 160%;
+    transition: text-shadow 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Smooth transition */
+}
+
+/* Subtle glowing effect on hover */
+.text1:hover {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), /* Softer white glow */
+                 0 0 10px rgba(255, 255, 255, 0.3);
+    opacity: 0.8; /* Slightly increase text opacity on hover */
+}
+
+.text2{
+    text-transform: uppercase;
+    align-items:start;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Antonio",sans-serif;
+    font-size: 5.9rem;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+
+
+
+.letter {
+    opacity: 0; /* Initially hidden */
+    display: inline; /* Keep letters inline */
+    transition: opacity 0.3s ease; /* Transition for fade effect */
+}
+
+/* Optional styles for the scrollable area */
+.scrollable-area {
+    height: 100vh; /* Create space to scroll */
+    background: #333;
+}
+
+@media (max-width: 576px) { /* Adjust the max-width as needed for your design */
+    .navbar{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .main-card{
+        max-height: 50vh;
+    }
+    .hero-title-screen{
+        padding-left: 6vw;
+    }
+    .sup{
+        margin-top: 0;
+        padding-left: 7px;
+        align-self: start;
+    }
+    .name{
+        font-size: 10vh;
+    }
+    .row {
+        flex-direction: column; /* Change to column for mobile */
+    }
+    .main-intro{
+        max-width: 80vw;
+    }
+    .project-box{
+        max-width: 83vw;
+    }
+    .text{
+        max-width: 90vw;
+    }
+    .text1{
+        padding-left: 8vw;
+        padding-right: 8vw;
+    }
+    .text2{
+        font-size: 20vw;
+    }
+}
+
+@media only screen and (min-width: 37.5rem) and (max-width: 64rem) {
+    .row{
+        flex-direction: column;
+
+    }
+    .name{
+        font-size: 9vh;
+    }
+    .project-box{
+        max-width: 89vw;
+    }
+    .main-intro{
+        font-size: 19px;
+    }
+    .text1{
+        font-size: 24px;
+    }
+    .text2{
+        font-size: 14vh;
+        padding-left: 14vw;
+    }
+}
